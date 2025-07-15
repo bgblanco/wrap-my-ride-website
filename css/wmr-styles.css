@@ -1146,6 +1146,17 @@ p {
         right: -40px;
     }
     
+    /* Fix mobile logo cutoff from fixed header */
+    .hero {
+        padding-top: 100px;
+        min-height: calc(100vh - 100px);
+    }
+    
+    .hero-logo {
+        margin-top: var(--space-lg);
+        margin-bottom: var(--space-lg);
+    }
+    
     .services-grid {
         grid-template-columns: 1fr;
     }
