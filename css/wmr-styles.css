@@ -558,7 +558,8 @@ p {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 100vh;
+    padding-top: 90px;
+    min-height: calc(100vh - 90px);
     display: flex;
     align-items: center;
     position: relative;
@@ -1146,12 +1147,7 @@ p {
         right: -40px;
     }
     
-    /* Fix mobile logo cutoff from fixed header */
-    .hero {
-        padding-top: 100px;
-        min-height: calc(100vh - 100px);
-    }
-    
+    /* Additional mobile logo spacing */
     .hero-logo {
         margin-top: var(--space-lg);
         margin-bottom: var(--space-lg);
