@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Wrap My Ride | Vehicle Wraps, PPF & Window Tinting in Fresno</title>
+    <meta name="description" content="Professional vehicle wrapping services in Fresno, CA. Vehicle wraps, paint protection film (PPF), window tinting, and custom graphics. 200+ color options available.">
+    <meta name="keywords" content="vehicle wraps, car wraps, PPF, paint protection film, window tinting, custom graphics, fleet wrapping, Fresno, vehicle services">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo/wrap-my-ride-logo.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/wmr-styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bebas Neue', cursive;
+        }
+        
+        .service-detail {
+            background: rgba(51, 51, 51, 0.3);
+            border: 2px solid var(--wmr-dark-gray);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+            transition: all var(--transition-medium);
+        }
+        
+        .service-detail:hover {
+            border-color: var(--wmr-red);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+        }
+        
+        .service-detail h3 {
+            color: var(--wmr-red);
+            margin-bottom: var(--space-lg);
+            font-size: var(--font-size-3xl);
+        }
+        
+        .service-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+        
+        .feature-card {
+            background: var(--wmr-black);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--wmr-red);
+        }
+        
+        .feature-card h4 {
+            color: var(--wmr-white);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .price-card {
+            background: linear-gradient(135deg, var(--wmr-red), #CC0000);
+            color: var(--wmr-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin: var(--space-xl) 0;
+        }
+        
+        .price-card h4 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-md);
+        }
+        
+        .price-card .price {
+            font-size: var(--font-size-3xl);
+            font-weight: 900;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-2xl) 0;
+        }
+        
+        .step {
+            text-align: center;
+            padding: var(--space-lg);
+            background: rgba(51, 51, 51, 0.3);
+            border-radius: var(--radius-lg);
+            position: relative;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: var(--wmr-red);
+            color: var(--wmr-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+            font-weight: 900;
+            margin-bottom: var(--space-md);
+        }
+        
+        .step h4 {
+            color: var(--wmr-white);
+            margin-bottom: var(--space-sm);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav-wrapper" id="navbar">
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo/wrap-my-ride-logo.jpg" alt="Wrap My Ride Logo" class="logo-image">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile Hamburger Menu -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-title">Wrap My Ride</div>
+                <div class="mobile-menu-subtitle">Vehicle Wraps • PPF • Window Tint</div>
+            </div>
+            
+            <nav class="mobile-navigation">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-footer">
+                <div class="mobile-contact-info">
+                    <a href="tel:559-905-9135" class="mobile-phone">(559) 905-9135</a>
+                    <div class="mobile-menu-subtitle">Ready to transform your vehicle?</div>
+                </div>
+                <a href="contact.html" class="mobile-cta">Get Your Free Quote</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-subtitle">Professional Vehicle Services</div>
+                <h1 class="hero-title">
+                    Our <span class="wmr-accent">Services</span>
+                </h1>
+                <p class="hero-description">
+                    Transform your vehicle with our comprehensive range of professional services. From complete color changes to protection and customization.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES OVERVIEW -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Complete Vehicle <span class="wmr-accent">Transformation</span></h2>
+                <p class="section-subtitle">
+                    No matter what you drive—exotic, luxury, or daily—we bring your vision to life with premium materials and expert installation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VEHICLE WRAPS -->
+    <section class="services" id="vehicle-wraps">
+        <div class="container">
+            <div class="service-detail scale-in">
+                <h3><i class="fas fa-car"></i> Vehicle Wraps</h3>
+                <p style="font-size: var(--font-size-lg); color: var(--wmr-light-gray); margin-bottom: var(--space-xl);">
+                    Completely transform the appearance of your vehicle with our premium vinyl wraps. Whether you want a solid color change, custom graphics, or unique designs, our skilled team brings your vision to life.
+                </p>
+                
+                <div class="service-features-grid">
+                    <div class="feature-card">
+                        <h4>Color Options</h4>
+                        <p>200+ premium colors available including matte, gloss, satin, and metallic finishes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Custom Designs</h4>
+                        <p>Personalized graphics, logos, and unique patterns created just for you.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Full & Partial Wraps</h4>
+                        <p>Complete vehicle transformation or accent pieces to enhance your ride.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Premium Materials</h4>
+                        <p>High-quality vinyl from trusted manufacturers for durability and appearance.</p>
+                    </div>
+                </div>
+                
+                <div class="price-card">
+                    <h4>Vehicle Wrap Pricing</h4>
+                    <div class="price">Starting at $2,500</div>
+                    <p>Full vehicle wraps • Partial wraps from $800 • Custom quotes available</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: var(--space-xl);">
+                    <a href="contact.html" class="btn btn-primary">Get Quote for Vehicle Wrap</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAINT PROTECTION FILM -->
+    <section class="services" style="background: var(--wmr-dark-gray);" id="ppf">
+        <div class="container">
+            <div class="service-detail scale-in">
+                <h3><i class="fas fa-shield-alt"></i> Paint Protection Film (PPF)</h3>
+                <p style="font-size: var(--font-size-lg); color: var(--wmr-light-gray); margin-bottom: var(--space-xl);">
+                    Protect your vehicle's paint from rock chips, scratches, road debris, and UV damage with our premium PPF installations. Preserve your vehicle's resale value with invisible protection.
+                </p>
+                
+                <div class="service-features-grid">
+                    <div class="feature-card">
+                        <h4>Self-Healing Technology</h4>
+                        <p>Minor scratches disappear with heat, keeping your vehicle looking new.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>UV Protection</h4>
+                        <p>Prevents paint fading and oxidation from harmful UV rays.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Invisible Protection</h4>
+                        <p>Crystal clear film that doesn't alter your vehicle's appearance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Warranty Coverage</h4>
+                        <p>Backed by manufacturer warranty for peace of mind.</p>
+                    </div>
+                </div>
+                
+                <div class="price-card">
+                    <h4>PPF Protection Pricing</h4>
+                    <div class="price">Starting at $1,200</div>
+                    <p>Front-end protection • Full vehicle coverage available • Custom coverage options</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: var(--space-xl);">
+                    <a href="contact.html" class="btn btn-primary">Get Quote for PPF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WINDOW TINTING -->
+    <section class="services" id="window-tint">
+        <div class="container">
+            <div class="service-detail scale-in">
+                <h3><i class="fas fa-tint"></i> Window Tinting</h3>
+                <p style="font-size: var(--font-size-lg); color: var(--wmr-light-gray); margin-bottom: var(--space-xl);">
+                    Professional window tinting for privacy, UV protection, and heat reduction. All installations are guaranteed to meet California legal requirements.
+                </p>
+                
+                <div class="service-features-grid">
+                    <div class="feature-card">
+                        <h4>Premium Films</h4>
+                        <p>High-quality tint films from leading manufacturers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Heat Reduction</h4>
+                        <p>Significantly reduces interior heat and glare.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Privacy & Security</h4>
+                        <p>Enhanced privacy and security for you and your belongings.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Legal Compliance</h4>
+                        <p>All installations meet California legal requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="price-card">
+                    <h4>Window Tinting Pricing</h4>
+                    <div class="price">Starting at $300</div>
+                    <p>Full vehicle tinting • Various darkness levels • Lifetime warranty options</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: var(--space-xl);">
+                    <a href="contact.html" class="btn btn-primary">Get Quote for Window Tinting</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOM GRAPHICS -->
+    <section class="services" style="background: var(--wmr-dark-gray);" id="custom-graphics">
+        <div class="container">
+            <div class="service-detail scale-in">
+                <h3><i class="fas fa-paint-brush"></i> Custom Graphics & Designs</h3>
+                <p style="font-size: var(--font-size-lg); color: var(--wmr-light-gray); margin-bottom: var(--space-xl);">
+                    Stand out from the crowd with custom graphics, logos, and designs. Perfect for personal expression or business branding.
+                </p>
+                
+                <div class="service-features-grid">
+                    <div class="feature-card">
+                        <h4>Business Branding</h4>
+                        <p>Professional vehicle graphics for business marketing and branding.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Personal Expression</h4>
+                        <p>Unique designs that reflect your personality and style.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Logo Integration</h4>
+                        <p>Perfect reproduction of your business logo or personal emblem.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Design Consultation</h4>
+                        <p>Work with our design team to create the perfect look.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: var(--space-xl);">
+                    <a href="contact.html" class="btn btn-primary">Discuss Custom Graphics</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLEET WRAPPING -->
+    <section class="services" id="fleet-wrapping">
+        <div class="container">
+            <div class="service-detail scale-in">
+                <h3><i class="fas fa-truck"></i> Fleet Wrapping</h3>
+                <p style="font-size: var(--font-size-lg); color: var(--wmr-light-gray); margin-bottom: var(--space-xl);">
+                    Professional fleet wrapping services for businesses. Consistent branding across all your vehicles with volume pricing available.
+                </p>
+                
+                <div class="service-features-grid">
+                    <div class="feature-card">
+                        <h4>Volume Pricing</h4>
+                        <p>Competitive rates for multiple vehicle wrapping projects.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Consistent Branding</h4>
+                        <p>Uniform appearance across your entire fleet.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Quick Turnaround</h4>
+                        <p>Efficient scheduling to minimize vehicle downtime.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Professional Service</h4>
+                        <p>Dedicated account management for business clients.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: var(--space-xl);">
+                    <a href="contact.html" class="btn btn-primary">Get Fleet Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR PROCESS -->
+    <section class="services" style="background: var(--wmr-dark-gray);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="wmr-accent">Process</span></h2>
+                <p class="section-subtitle">
+                    Professional installation process ensuring quality results every time
+                </p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step scale-in">
+                    <div class="step-number">1</div>
+                    <h4>Consultation</h4>
+                    <p>Discuss your vision, preferences, and requirements for the project.</p>
+                </div>
+                
+                <div class="step scale-in stagger-1">
+                    <div class="step-number">2</div>
+                    <h4>Design & Quote</h4>
+                    <p>Create design mockups and provide detailed pricing for your approval.</p>
+                </div>
+                
+                <div class="step scale-in stagger-2">
+                    <div class="step-number">3</div>
+                    <h4>Preparation</h4>
+                    <p>Thorough vehicle cleaning and surface preparation for optimal adhesion.</p>
+                </div>
+                
+                <div class="step scale-in stagger-3">
+                    <div class="step-number">4</div>
+                    <h4>Installation</h4>
+                    <p>Expert application using professional techniques and tools.</p>
+                </div>
+                
+                <div class="step scale-in stagger-4">
+                    <div class="step-number">5</div>
+                    <h4>Quality Check</h4>
+                    <p>Final inspection and quality assurance before delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ready to <span class="wmr-accent">Transform</span> Your Vehicle?</h2>
+                <p class="section-subtitle">
+                    Contact us today for a free consultation and custom quote
+                </p>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--space-2xl);">
+                <a href="contact.html" class="btn btn-primary" style="margin-right: var(--space-md);">Get Free Quote</a>
+                <a href="tel:559-905-9135" class="btn btn-secondary">Call (559) 905-9135</a>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--space-lg);">
+                <p style="color: var(--wmr-light-gray);">
+                    <i class="fas fa-map-marker-alt"></i> 
+                    3430 W. Ashlan Ave #109-110, Fresno, CA 93722
+                </p>
+                <p style="color: var(--wmr-light-gray); margin-top: var(--space-sm);">
+                    <i class="fab fa-instagram"></i> 
+                    Follow us on Instagram <a href="https://instagram.com/wrap_my_ride_" target="_blank" style="color: var(--wmr-red);">@wrap_my_ride_</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Wrap My Ride</h3>
+                    <p>
+                        Fresno's premier vehicle wrap specialists. We transform vehicles with professional wraps, 
+                        paint protection film, and window tinting services. Quality installations with premium materials.
+                    </p>
+                    <div class="wmr-red-line"></div>
+                    <p><strong>Vehicle Wraps • PPF • Window Tint</strong></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#vehicle-wraps">Vehicle Wraps</a></li>
+                        <li><a href="#ppf">Paint Protection Film</a></li>
+                        <li><a href="#window-tint">Window Tinting</a></li>
+                        <li><a href="#custom-graphics">Custom Graphics</a></li>
+                        <li><a href="#fleet-wrapping">Fleet Wrapping</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:559-905-9135">(559) 905-9135</a></li>
+                        <li><a href="mailto:info@wrapmyride.com">info@wrapmyride.com</a></li>
+                        <li>3430 W. Ashlan Ave #109-110<br>Fresno, CA 93722</li>
+                        <li><a href="https://instagram.com/wrap_my_ride_" target="_blank">@wrap_my_ride_</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wrap My Ride. All rights reserved. | Professional vehicle wrapping in Fresno, CA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

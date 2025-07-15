@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Wrap My Ride | Before & After Vehicle Wrap Gallery</title>
+    <meta name="description" content="View our vehicle wrap portfolio in Fresno, CA. Before and after photos of vehicle wraps, PPF installations, and window tinting projects. Quality transformations guaranteed.">
+    <meta name="keywords" content="vehicle wrap portfolio, before after photos, car wrap gallery, PPF gallery, window tint examples, Fresno vehicle wraps, wrap my ride portfolio">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wrapmyride.com/portfolio">
+    <meta property="og:title" content="Portfolio - Wrap My Ride | Vehicle Wrap Gallery">
+    <meta property="og:description" content="View our vehicle wrap portfolio in Fresno, CA. Before and after transformations.">
+    <meta property="og:image" content="images/logo/wrap-my-ride-logo.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://wrapmyride.com/portfolio">
+    <meta property="twitter:title" content="Portfolio - Wrap My Ride | Vehicle Wrap Gallery">
+    <meta property="twitter:description" content="View our vehicle wrap portfolio in Fresno, CA. Before and after transformations.">
+    <meta property="twitter:image" content="images/logo/wrap-my-ride-logo.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo/wrap-my-ride-logo.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/wmr-styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bebas Neue', cursive;
+        }
+        
+        /* Portfolio Filter Buttons */
+        .portfolio-filter {
+            background: var(--wmr-dark-gray);
+            padding: var(--space-2xl) 0;
+            text-align: center;
+            border-bottom: 2px solid var(--wmr-red);
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+        
+        .filter-btn {
+            padding: var(--space-md) var(--space-xl);
+            background: transparent;
+            color: var(--wmr-white);
+            border: 2px solid var(--wmr-dark-gray);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-medium);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--wmr-red);
+            color: var(--wmr-white);
+            border-color: var(--wmr-red);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
+        }
+        
+        /* Portfolio Gallery */
+        .portfolio-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .portfolio-item {
+            background: var(--wmr-dark-gray);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-medium);
+            border: 2px solid var(--wmr-dark-gray);
+            position: relative;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--wmr-red);
+            box-shadow: 0 20px 40px rgba(255, 0, 0, 0.3);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--wmr-dark-gray), var(--wmr-black));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--wmr-light-gray);
+            font-size: var(--font-size-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 0, 0, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-image::before {
+            opacity: 1;
+        }
+        
+        .portfolio-content {
+            padding: var(--space-lg);
+        }
+        
+        .portfolio-category {
+            color: var(--wmr-red);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .portfolio-title {
+            color: var(--wmr-white);
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .portfolio-description {
+            color: var(--wmr-light-gray);
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+        }
+        
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+        
+        .portfolio-tag {
+            background: rgba(255, 0, 0, 0.1);
+            color: var(--wmr-red);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .portfolio-link {
+            color: var(--wmr-red);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all var(--transition-medium);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        
+        .portfolio-link:hover {
+            color: var(--wmr-white);
+            transform: translateX(5px);
+        }
+        
+        .portfolio-link::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-link:hover::after {
+            transform: translateX(5px);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: var(--wmr-black);
+            padding: var(--space-3xl) 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .testimonial {
+            background: var(--wmr-dark-gray);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--wmr-red);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--wmr-red);
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            color: var(--wmr-light-gray);
+            font-size: var(--font-size-lg);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            color: var(--wmr-white);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .testimonial-vehicle {
+            color: var(--wmr-red);
+            font-size: var(--font-size-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--wmr-dark-gray);
+            padding: var(--space-3xl) 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: var(--space-xl);
+            background: var(--wmr-black);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--wmr-dark-gray);
+            transition: all var(--transition-medium);
+        }
+        
+        .stat-item:hover {
+            border-color: var(--wmr-red);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.2);
+        }
+        
+        .stat-number {
+            font-size: var(--font-size-4xl);
+            font-weight: 900;
+            color: var(--wmr-white);
+            display: block;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .stat-label {
+            color: var(--wmr-light-gray);
+            font-size: var(--font-size-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .portfolio-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav-wrapper" id="navbar">
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo/wrap-my-ride-logo.jpg" alt="Wrap My Ride Logo" class="logo-image">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile Hamburger Menu -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-title">Wrap My Ride</div>
+                <div class="mobile-menu-subtitle">Vehicle Wraps • PPF • Window Tint</div>
+            </div>
+            
+            <nav class="mobile-navigation">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-footer">
+                <div class="mobile-contact-info">
+                    <a href="tel:559-905-9135" class="mobile-phone">(559) 905-9135</a>
+                    <div class="mobile-menu-subtitle">Ready to transform your vehicle?</div>
+                </div>
+                <a href="contact.html" class="mobile-cta">Get Your Free Quote</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-subtitle">Our Work Speaks for Itself</div>
+                <h1 class="hero-title">
+                    Portfolio & <span class="wmr-accent">Results</span>
+                </h1>
+                <p class="hero-description">
+                    See real transformations from our Fresno clients. Before and after photos showcasing vehicle wraps, paint protection film, and window tinting projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO FILTER -->
+    <section class="portfolio-filter">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Browse Our <span class="wmr-accent">Work</span></h2>
+                <p class="section-subtitle">
+                    Filter by service type to see specific transformations
+                </p>
+            </div>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="vehicle-wraps">Vehicle Wraps</button>
+                <button class="filter-btn" data-filter="ppf">Paint Protection Film</button>
+                <button class="filter-btn" data-filter="window-tint">Window Tinting</button>
+                <button class="filter-btn" data-filter="custom-graphics">Custom Graphics</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO GALLERY -->
+    <section class="portfolio">
+        <div class="container">
+            <div class="portfolio-gallery">
+                <!-- Vehicle Wraps -->
+                <div class="portfolio-item scale-in" data-category="vehicle-wraps">
+                    <div class="portfolio-image">
+                        <span>Before & After: Full Vehicle Wrap</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Vehicle Wrap</div>
+                        <h3 class="portfolio-title">BMW M3 Matte Black Transformation</h3>
+                        <p class="portfolio-description">
+                            Complete color change from white to matte black with gloss black accents. Professional installation with perfect alignment.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Matte Black</span>
+                            <span class="portfolio-tag">Full Wrap</span>
+                            <span class="portfolio-tag">BMW</span>
+                        </div>
+                        <a href="https://instagram.com/wrap_my_ride_" target="_blank" class="portfolio-link">
+                            <i class="fab fa-instagram"></i> View on Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item scale-in stagger-1" data-category="vehicle-wraps">
+                    <div class="portfolio-image">
+                        <span>Custom Graphics Design</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Custom Graphics</div>
+                        <h3 class="portfolio-title">Commercial Fleet Branding</h3>
+                        <p class="portfolio-description">
+                            Professional business graphics with logo integration and contact information for local contractor fleet.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Business Graphics</span>
+                            <span class="portfolio-tag">Fleet Wrap</span>
+                            <span class="portfolio-tag">Commercial</span>
+                        </div>
+                        <a href="https://instagram.com/wrap_my_ride_" target="_blank" class="portfolio-link">
+                            <i class="fab fa-instagram"></i> View on Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item scale-in stagger-2" data-category="ppf">
+                    <div class="portfolio-image">
+                        <span>Paint Protection Film Installation</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Paint Protection Film</div>
+                        <h3 class="portfolio-title">Luxury SUV Full Front Protection</h3>
+                        <p class="portfolio-description">
+                            Complete front-end PPF installation on high-end SUV. Invisible protection that maintains original paint appearance.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">PPF</span>
+                            <span class="portfolio-tag">Full Front</span>
+                            <span class="portfolio-tag">Luxury SUV</span>
+                        </div>
+                        <a href="https://instagram.com/wrap_my_ride_" target="_blank" class="portfolio-link">
+                            <i class="fab fa-instagram"></i> View on Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item scale-in stagger-3" data-category="window-tint">
+                    <div class="portfolio-image">
+                        <span>Professional Window Tinting</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Window Tinting</div>
+                        <h3 class="portfolio-title">Sedan Complete Tint Package</h3>
+                        <p class="portfolio-description">
+                            Professional window tinting with premium film. Perfect installation with legal compliance guaranteed.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Window Tint</span>
+                            <span class="portfolio-tag">Premium Film</span>
+                            <span class="portfolio-tag">Sedan</span>
+                        </div>
+                        <a href="https://instagram.com/wrap_my_ride_" target="_blank" class="portfolio-link">
+                            <i class="fab fa-instagram"></i> View on Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item scale-in stagger-4" data-category="vehicle-wraps">
+                    <div class="portfolio-image">
+                        <span>Truck Wrap Transformation</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Vehicle Wrap</div>
+                        <h3 class="portfolio-title">Pickup Truck Color Change</h3>
+                        <p class="portfolio-description">
+                            Bold color transformation with custom accents. Durable vinyl wrap designed for heavy-duty use.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Color Change</span>
+                            <span class="portfolio-tag">Pickup Truck</span>
+                            <span class="portfolio-tag">Custom Design</span>
+                        </div>
+                        <a href="https://instagram.com/wrap_my_ride_" target="_blank" class="portfolio-link">
+                            <i class="fab fa-instagram"></i> View on Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item scale-in stagger-5" data-category="custom-graphics">
+                    <div class="portfolio-image">
+                        <span>Racing Stripes & Graphics</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Custom Graphics</div>
+                        <h3 class="portfolio-title">Sports Car Racing Stripes</h3>
+                        <p class="portfolio-description">
+                            Precision racing stripes with custom graphics. Perfect alignment and professional finish.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Racing Stripes</span>
+                            <span class="portfolio-tag">Sports Car</span>
+                            <span class="portfolio-tag">Custom Graphics</span>
+                        </div>
+                        <a href="https://instagram.com/wrap_my_ride_" target="_blank" class="portfolio-link">
+                            <i class="fab fa-instagram"></i> View on Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="wmr-accent">Results</span></h2>
+                <p class="section-subtitle">
+                    Numbers that reflect our commitment to quality and customer satisfaction
+                </p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item scale-in">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Vehicles Transformed</div>
+                </div>
+                
+                <div class="stat-item scale-in stagger-1">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Customer Satisfaction</div>
+                </div>
+                
+                <div class="stat-item scale-in stagger-2">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                
+                <div class="stat-item scale-in stagger-3">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Color Options</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our <span class="wmr-accent">Clients Say</span></h2>
+                <p class="section-subtitle">
+                    Real feedback from satisfied customers across Fresno and Central Valley
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial scale-in">
+                    <p class="testimonial-text">
+                        Amazing work! My BMW looks completely different and the quality is outstanding. The team was professional and finished exactly when they said they would.
+                    </p>
+                    <div class="testimonial-author">Mike Rodriguez</div>
+                    <div class="testimonial-vehicle">2022 BMW M3 - Matte Black Wrap</div>
+                </div>
+                
+                <div class="testimonial scale-in stagger-1">
+                    <p class="testimonial-text">
+                        Best investment I made for my truck. The PPF has saved my paint from so many rock chips. Still looks brand new after 2 years!
+                    </p>
+                    <div class="testimonial-author">Sarah Johnson</div>
+                    <div class="testimonial-vehicle">2021 Ford F-150 - Paint Protection Film</div>
+                </div>
+                
+                <div class="testimonial scale-in stagger-2">
+                    <p class="testimonial-text">
+                        Professional service from start to finish. They helped design exactly what I wanted and the installation was flawless. Highly recommended!
+                    </p>
+                    <div class="testimonial-author">David Chen</div>
+                    <div class="testimonial-vehicle">2020 Tesla Model S - Custom Graphics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ready for Your <span class="wmr-accent">Transformation?</span></h2>
+                <p class="section-subtitle">
+                    Join hundreds of satisfied customers who chose Wrap My Ride
+                </p>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--space-2xl);">
+                <a href="contact.html" class="btn btn-primary" style="margin-right: var(--space-md);">Get Your Free Quote</a>
+                <a href="tel:559-905-9135" class="btn btn-secondary">Call (559) 905-9135</a>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--space-lg);">
+                <p style="color: var(--wmr-light-gray);">
+                    <i class="fas fa-map-marker-alt"></i> 
+                    3430 W. Ashlan Ave #109-110, Fresno, CA 93722
+                </p>
+                <p style="color: var(--wmr-light-gray); margin-top: var(--space-sm);">
+                    <i class="fab fa-instagram"></i> 
+                    Follow us on Instagram <a href="https://instagram.com/wrap_my_ride_" target="_blank" style="color: var(--wmr-red);">@wrap_my_ride_</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Wrap My Ride</h3>
+                    <p>
+                        Fresno's premier vehicle wrap specialists. We transform vehicles with professional wraps, 
+                        paint protection film, and window tinting services. Quality installations with premium materials.
+                    </p>
+                    <div class="wmr-red-line"></div>
+                    <p><strong>Vehicle Wraps • PPF • Window Tint</strong></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Portfolio</h3>
+                    <ul class="footer-links">
+                        <li><a href="portfolio.html">All Projects</a></li>
+                        <li><a href="portfolio.html">Vehicle Wraps</a></li>
+                        <li><a href="portfolio.html">Paint Protection Film</a></li>
+                        <li><a href="portfolio.html">Window Tinting</a></li>
+                        <li><a href="portfolio.html">Custom Graphics</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:559-905-9135">(559) 905-9135</a></li>
+                        <li><a href="mailto:info@wrapmyride.com">info@wrapmyride.com</a></li>
+                        <li>3430 W. Ashlan Ave #109-110<br>Fresno, CA 93722</li>
+                        <li><a href="https://instagram.com/wrap_my_ride_" target="_blank">@wrap_my_ride_</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wrap My Ride. All rights reserved. | Professional vehicle wrapping in Fresno, CA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Wrap My Ride | Get Your Free Quote Today</title>
+    <meta name="description" content="Contact Wrap My Ride in Fresno, CA for your free vehicle wrap quote. Professional vehicle wraps, PPF, and window tinting. Call (559) 905-9135 or visit us today.">
+    <meta name="keywords" content="contact wrap my ride, vehicle wrap quote, Fresno vehicle wrapping, PPF quote, window tint quote, 3430 W Ashlan Ave, 559-905-9135">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wrapmyride.com/contact">
+    <meta property="og:title" content="Contact - Wrap My Ride | Get Your Free Quote">
+    <meta property="og:description" content="Contact Wrap My Ride in Fresno, CA for your free vehicle wrap quote.">
+    <meta property="og:image" content="images/logo/wrap-my-ride-logo.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://wrapmyride.com/contact">
+    <meta property="twitter:title" content="Contact - Wrap My Ride | Get Your Free Quote">
+    <meta property="twitter:description" content="Contact Wrap My Ride in Fresno, CA for your free vehicle wrap quote.">
+    <meta property="twitter:image" content="images/logo/wrap-my-ride-logo.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo/wrap-my-ride-logo.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/wmr-styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bebas Neue', cursive;
+        }
+        
+        /* Enhanced Contact Form */
+        .contact-main {
+            background: var(--wmr-black);
+            padding: var(--space-3xl) 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .contact-form-section {
+            background: var(--wmr-dark-gray);
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--wmr-dark-gray);
+            transition: all var(--transition-medium);
+        }
+        
+        .contact-form-section:hover {
+            border-color: var(--wmr-red);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+        }
+        
+        .form-section-title {
+            color: var(--wmr-white);
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-lg);
+            text-align: center;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .form-group-full {
+            grid-column: 1 / -1;
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: var(--space-md);
+            background: var(--wmr-black);
+            border: 2px solid var(--wmr-dark-gray);
+            border-radius: var(--radius-md);
+            color: var(--wmr-white);
+            font-size: var(--font-size-base);
+            transition: all var(--transition-medium);
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--wmr-red);
+            box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.2);
+        }
+        
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--wmr-light-gray);
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--wmr-red);
+        }
+        
+        .checkbox-item label {
+            color: var(--wmr-light-gray);
+            font-size: var(--font-size-sm);
+        }
+        
+        /* Contact Info Cards */
+        .contact-info-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+        }
+        
+        .contact-card {
+            background: var(--wmr-dark-gray);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--wmr-red);
+            transition: all var(--transition-medium);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.2);
+        }
+        
+        .contact-card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .contact-card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--wmr-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+            color: var(--wmr-white);
+        }
+        
+        .contact-card-title {
+            color: var(--wmr-white);
+            font-size: var(--font-size-xl);
+            margin: 0;
+        }
+        
+        .contact-card-content {
+            color: var(--wmr-light-gray);
+            line-height: 1.6;
+        }
+        
+        .contact-card-content strong {
+            color: var(--wmr-white);
+            display: block;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .contact-card-content a {
+            color: var(--wmr-red);
+            text-decoration: none;
+            transition: color var(--transition-medium);
+        }
+        
+        .contact-card-content a:hover {
+            color: var(--wmr-white);
+        }
+        
+        /* Map Section */
+        .map-section {
+            background: var(--wmr-dark-gray);
+            padding: var(--space-3xl) 0;
+        }
+        
+        .map-container {
+            background: var(--wmr-black);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 2px solid var(--wmr-dark-gray);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--wmr-light-gray);
+            font-size: var(--font-size-lg);
+            position: relative;
+        }
+        
+        .map-placeholder {
+            text-align: center;
+            padding: var(--space-2xl);
+        }
+        
+        .map-placeholder i {
+            font-size: var(--font-size-4xl);
+            color: var(--wmr-red);
+            margin-bottom: var(--space-lg);
+        }
+        
+        /* Service Area */
+        .service-area {
+            background: var(--wmr-black);
+            padding: var(--space-3xl) 0;
+        }
+        
+        .service-area-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .area-card {
+            background: var(--wmr-dark-gray);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 2px solid var(--wmr-dark-gray);
+            transition: all var(--transition-medium);
+        }
+        
+        .area-card:hover {
+            border-color: var(--wmr-red);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.2);
+        }
+        
+        .area-card h3 {
+            color: var(--wmr-white);
+            margin-bottom: var(--space-md);
+        }
+        
+        .area-card p {
+            color: var(--wmr-light-gray);
+            line-height: 1.6;
+        }
+        
+        /* Emergency Contact */
+        .emergency-contact {
+            background: linear-gradient(135deg, var(--wmr-red), #CC0000);
+            color: var(--wmr-white);
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: var(--space-xl);
+        }
+        
+        .emergency-contact h3 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-md);
+        }
+        
+        .emergency-contact p {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .emergency-contact a {
+            color: var(--wmr-white);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: var(--font-size-xl);
+            transition: all var(--transition-medium);
+        }
+        
+        .emergency-contact a:hover {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-area-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form-section {
+                padding: var(--space-xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav-wrapper" id="navbar">
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo/wrap-my-ride-logo.jpg" alt="Wrap My Ride Logo" class="logo-image">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile Hamburger Menu -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-title">Wrap My Ride</div>
+                <div class="mobile-menu-subtitle">Vehicle Wraps • PPF • Window Tint</div>
+            </div>
+            
+            <nav class="mobile-navigation">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-footer">
+                <div class="mobile-contact-info">
+                    <a href="tel:559-905-9135" class="mobile-phone">(559) 905-9135</a>
+                    <div class="mobile-menu-subtitle">Ready to transform your vehicle?</div>
+                </div>
+                <a href="contact.html" class="mobile-cta">Get Your Free Quote</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-subtitle">Ready to Transform Your Vehicle?</div>
+                <h1 class="hero-title">
+                    Get Your Free <span class="wmr-accent">Quote</span>
+                </h1>
+                <p class="hero-description">
+                    Contact Wrap My Ride today for professional vehicle wrapping, paint protection film, and window tinting services in Fresno, CA.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTACT SECTION -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2 class="form-section-title">Request Your Free Quote</h2>
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="first-name" name="first-name" class="form-input" placeholder="First Name *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="last-name" name="last-name" class="form-input" placeholder="Last Name *" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Phone Number *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Email Address *" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="vehicle-year" name="vehicle-year" class="form-input" placeholder="Vehicle Year *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="vehicle-make" name="vehicle-make" class="form-input" placeholder="Vehicle Make *" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group form-group-full">
+                            <input type="text" id="vehicle-model" name="vehicle-model" class="form-input" placeholder="Vehicle Model *" required>
+                        </div>
+                        
+                        <div class="form-group form-group-full">
+                            <label style="color: var(--wmr-white); font-weight: 600; margin-bottom: var(--space-sm); display: block;">
+                                Services Needed (check all that apply):
+                            </label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="vehicle-wrap" name="services" value="vehicle-wrap">
+                                    <label for="vehicle-wrap">Vehicle Wrap</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="ppf" name="services" value="ppf">
+                                    <label for="ppf">Paint Protection Film</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="window-tint" name="services" value="window-tint">
+                                    <label for="window-tint">Window Tinting</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="custom-graphics" name="services" value="custom-graphics">
+                                    <label for="custom-graphics">Custom Graphics</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group form-group-full">
+                            <select id="timeline" name="timeline" class="form-select" required>
+                                <option value="">When do you need this completed? *</option>
+                                <option value="asap">ASAP</option>
+                                <option value="1-2-weeks">1-2 weeks</option>
+                                <option value="1-month">Within 1 month</option>
+                                <option value="2-3-months">2-3 months</option>
+                                <option value="flexible">Flexible timeline</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group form-group-full">
+                            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us about your project... (color preferences, specific needs, budget range, etc.)"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Quote Request
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3 class="contact-card-title">Call Us</h3>
+                        </div>
+                        <div class="contact-card-content">
+                            <strong>Phone</strong>
+                            <a href="tel:559-905-9135">(559) 905-9135</a>
+                            <br><br>
+                            <strong>Business Hours</strong>
+                            Monday - Friday: 8:00 AM - 6:00 PM<br>
+                            Saturday: 9:00 AM - 4:00 PM<br>
+                            Sunday: Closed
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3 class="contact-card-title">Visit Us</h3>
+                        </div>
+                        <div class="contact-card-content">
+                            <strong>Address</strong>
+                            3430 W. Ashlan Ave #109-110<br>
+                            Fresno, CA 93722
+                            <br><br>
+                            <strong>Parking</strong>
+                            Free parking available<br>
+                            Easy access for all vehicle types
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-card-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <h3 class="contact-card-title">Follow Us</h3>
+                        </div>
+                        <div class="contact-card-content">
+                            <strong>Instagram</strong>
+                            <a href="https://instagram.com/wrap_my_ride_" target="_blank">@wrap_my_ride_</a>
+                            <br><br>
+                            <strong>Stay Updated</strong>
+                            Follow us for the latest projects,<br>
+                            behind-the-scenes content, and special offers
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Find <span class="wmr-accent">Our Shop</span></h2>
+                <p class="section-subtitle">
+                    Located in Fresno, CA with easy access from all major highways
+                </p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Interactive Map</h3>
+                    <p>3430 W. Ashlan Ave #109-110<br>Fresno, CA 93722</p>
+                    <p style="color: var(--wmr-red); margin-top: var(--space-md);">
+                        <i class="fas fa-directions"></i> 
+                        <a href="https://maps.google.com/maps?q=3430+W.+Ashlan+Ave+109-110+Fresno+CA+93722" target="_blank" style="color: var(--wmr-red);">
+                            Get Directions
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE AREA -->
+    <section class="service-area">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Service <span class="wmr-accent">Area</span></h2>
+                <p class="section-subtitle">
+                    We serve Fresno and the surrounding Central Valley communities
+                </p>
+            </div>
+            
+            <div class="service-area-grid">
+                <div class="area-card scale-in">
+                    <h3>Fresno</h3>
+                    <p>Our home base with full-service facility and showroom</p>
+                </div>
+                
+                <div class="area-card scale-in stagger-1">
+                    <h3>Clovis</h3>
+                    <p>Serving the Clovis community with premium vehicle services</p>
+                </div>
+                
+                <div class="area-card scale-in stagger-2">
+                    <h3>Visalia</h3>
+                    <p>Quality vehicle wrapping and protection services</p>
+                </div>
+                
+                <div class="area-card scale-in stagger-3">
+                    <h3>Madera</h3>
+                    <p>Professional automotive customization for Madera residents</p>
+                </div>
+                
+                <div class="area-card scale-in stagger-4">
+                    <h3>Merced</h3>
+                    <p>Extending our services to the Merced area</p>
+                </div>
+                
+                <div class="area-card scale-in stagger-5">
+                    <h3>Central Valley</h3>
+                    <p>Mobile services available for surrounding communities</p>
+                </div>
+            </div>
+            
+            <div class="emergency-contact">
+                <h3>Need Service Outside Our Area?</h3>
+                <p>Contact us to discuss mobile service options or special arrangements</p>
+                <a href="tel:559-905-9135">(559) 905-9135</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Wrap My Ride</h3>
+                    <p>
+                        Fresno's premier vehicle wrap specialists. We transform vehicles with professional wraps, 
+                        paint protection film, and window tinting services. Quality installations with premium materials.
+                    </p>
+                    <div class="wmr-red-line"></div>
+                    <p><strong>Vehicle Wraps • PPF • Window Tint</strong></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:559-905-9135">Call: (559) 905-9135</a></li>
+                        <li><a href="contact.html">Request Quote</a></li>
+                        <li><a href="mailto:info@wrapmyride.com">Email Us</a></li>
+                        <li><a href="https://maps.google.com/maps?q=3430+W.+Ashlan+Ave+109-110+Fresno+CA+93722" target="_blank">Get Directions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Business Hours</h3>
+                    <ul class="footer-links">
+                        <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
+                        <li>Saturday: 9:00 AM - 4:00 PM</li>
+                        <li>Sunday: Closed</li>
+                        <li><a href="https://instagram.com/wrap_my_ride_" target="_blank">@wrap_my_ride_</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wrap My Ride. All rights reserved. | Professional vehicle wrapping in Fresno, CA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

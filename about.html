@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Wrap My Ride | Fresno's Premier Vehicle Wrap Specialists</title>
+    <meta name="description" content="Learn about Wrap My Ride's story, team, and commitment to quality vehicle wrapping in Fresno, CA. Professional vehicle wraps, PPF, and window tinting services since 2019.">
+    <meta name="keywords" content="about wrap my ride, vehicle wrap team, Fresno vehicle wrapping company, professional car wrapping, PPF specialists, window tinting experts">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wrapmyride.com/about">
+    <meta property="og:title" content="About Us - Wrap My Ride | Fresno's Vehicle Wrap Specialists">
+    <meta property="og:description" content="Learn about Wrap My Ride's story and commitment to quality vehicle wrapping in Fresno, CA.">
+    <meta property="og:image" content="images/logo/wrap-my-ride-logo.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://wrapmyride.com/about">
+    <meta property="twitter:title" content="About Us - Wrap My Ride | Fresno's Vehicle Wrap Specialists">
+    <meta property="twitter:description" content="Learn about Wrap My Ride's story and commitment to quality vehicle wrapping in Fresno, CA.">
+    <meta property="twitter:image" content="images/logo/wrap-my-ride-logo.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo/wrap-my-ride-logo.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/wmr-styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bebas Neue', cursive;
+        }
+        
+        /* Story Section */
+        .story-section {
+            background: var(--wmr-black);
+            padding: var(--space-3xl) 0;
+        }
+        
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+            margin-top: var(--space-2xl);
+        }
+        
+        .story-text {
+            color: var(--wmr-light-gray);
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+        }
+        
+        .story-text h3 {
+            color: var(--wmr-white);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .story-text p {
+            margin-bottom: var(--space-lg);
+        }
+        
+        .story-image {
+            background: var(--wmr-dark-gray);
+            height: 400px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--wmr-light-gray);
+            font-size: var(--font-size-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .story-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 0, 0, 0.1), transparent);
+        }
+        
+        /* Values Section */
+        .values-section {
+            background: var(--wmr-dark-gray);
+            padding: var(--space-3xl) 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .value-card {
+            background: var(--wmr-black);
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 2px solid var(--wmr-dark-gray);
+            transition: all var(--transition-medium);
+            position: relative;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--wmr-red), transparent);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+        
+        .value-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .value-card:hover {
+            border-color: var(--wmr-red);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 0, 0, 0.3);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--wmr-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            color: var(--wmr-white);
+            margin: 0 auto var(--space-lg);
+        }
+        
+        .value-card h3 {
+            color: var(--wmr-white);
+            margin-bottom: var(--space-md);
+        }
+        
+        .value-card p {
+            color: var(--wmr-light-gray);
+            line-height: 1.6;
+        }
+        
+        /* Team Section */
+        .team-section {
+            background: var(--wmr-black);
+            padding: var(--space-3xl) 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .team-member {
+            background: var(--wmr-dark-gray);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            text-align: center;
+            border: 2px solid var(--wmr-dark-gray);
+            transition: all var(--transition-medium);
+        }
+        
+        .team-member:hover {
+            border-color: var(--wmr-red);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.3);
+        }
+        
+        .team-photo {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--wmr-dark-gray), var(--wmr-black));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--wmr-light-gray);
+            font-size: var(--font-size-lg);
+            position: relative;
+        }
+        
+        .team-photo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 0, 0, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .team-member:hover .team-photo::before {
+            opacity: 1;
+        }
+        
+        .team-info {
+            padding: var(--space-xl);
+        }
+        
+        .team-name {
+            color: var(--wmr-white);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .team-role {
+            color: var(--wmr-red);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-md);
+        }
+        
+        .team-bio {
+            color: var(--wmr-light-gray);
+            line-height: 1.6;
+            font-size: var(--font-size-sm);
+        }
+        
+        /* Process Section */
+        .process-section {
+            background: var(--wmr-dark-gray);
+            padding: var(--space-3xl) 0;
+        }
+        
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .process-step {
+            background: var(--wmr-black);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 2px solid var(--wmr-dark-gray);
+            position: relative;
+            transition: all var(--transition-medium);
+        }
+        
+        .process-step:hover {
+            border-color: var(--wmr-red);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.2);
+        }
+        
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--wmr-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+            font-weight: 900;
+            color: var(--wmr-white);
+            margin: 0 auto var(--space-lg);
+        }
+        
+        .process-step h3 {
+            color: var(--wmr-white);
+            margin-bottom: var(--space-md);
+        }
+        
+        .process-step p {
+            color: var(--wmr-light-gray);
+            line-height: 1.6;
+        }
+        
+        /* Guarantees Section */
+        .guarantees-section {
+            background: var(--wmr-black);
+            padding: var(--space-3xl) 0;
+        }
+        
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .guarantee-card {
+            background: var(--wmr-dark-gray);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--wmr-red);
+            transition: all var(--transition-medium);
+        }
+        
+        .guarantee-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+        }
+        
+        .guarantee-card h3 {
+            color: var(--wmr-white);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+        
+        .guarantee-card i {
+            color: var(--wmr-red);
+            font-size: var(--font-size-xl);
+        }
+        
+        .guarantee-card p {
+            color: var(--wmr-light-gray);
+            line-height: 1.6;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-timeline {
+                grid-template-columns: 1fr;
+            }
+            
+            .guarantees-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav-wrapper" id="navbar">
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo/wrap-my-ride-logo.jpg" alt="Wrap My Ride Logo" class="logo-image">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile Hamburger Menu -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-title">Wrap My Ride</div>
+                <div class="mobile-menu-subtitle">Vehicle Wraps • PPF • Window Tint</div>
+            </div>
+            
+            <nav class="mobile-navigation">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-footer">
+                <div class="mobile-contact-info">
+                    <a href="tel:559-905-9135" class="mobile-phone">(559) 905-9135</a>
+                    <div class="mobile-menu-subtitle">Ready to transform your vehicle?</div>
+                </div>
+                <a href="contact.html" class="mobile-cta">Get Your Free Quote</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-subtitle">Get to Know Us</div>
+                <h1 class="hero-title">
+                    About <span class="wmr-accent">Wrap My Ride</span>
+                </h1>
+                <p class="hero-description">
+                    Your trusted partner for professional vehicle wrapping, paint protection film, and window tinting services in Fresno, CA. Quality, expertise, and customer satisfaction since 2019.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text scale-in">
+                    <h3>Our Story</h3>
+                    <p>
+                        Wrap My Ride was founded in 2019 with a simple mission: to provide Fresno and the Central Valley with the highest quality vehicle customization services. What started as a passion for automotive aesthetics has grown into a trusted business serving hundreds of satisfied customers.
+                    </p>
+                    <p>
+                        Our team combines years of experience with cutting-edge technology and premium materials to deliver results that exceed expectations. We understand that your vehicle is more than just transportation—it's an extension of your personality and style.
+                    </p>
+                    <p>
+                        From our facility on Ashlan Avenue, we've built a reputation for professionalism, attention to detail, and customer service that keeps clients coming back and referring their friends and family.
+                    </p>
+                </div>
+                <div class="story-image scale-in stagger-1">
+                    <span>Our Fresno Facility</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES SECTION -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="wmr-accent">Values</span></h2>
+                <p class="section-subtitle">
+                    The principles that guide everything we do
+                </p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card scale-in">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Quality First</h3>
+                    <p>
+                        We use only premium materials and proven techniques to ensure every project meets our high standards. Your satisfaction is our guarantee.
+                    </p>
+                </div>
+                
+                <div class="value-card scale-in stagger-1">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Customer Focus</h3>
+                    <p>
+                        Every client receives personalized attention and professional service. We listen to your needs and bring your vision to life.
+                    </p>
+                </div>
+                
+                <div class="value-card scale-in stagger-2">
+                    <div class="value-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Expert Craftsmanship</h3>
+                    <p>
+                        Our skilled team brings years of experience and continuous training to every installation. Precision and expertise in every detail.
+                    </p>
+                </div>
+                
+                <div class="value-card scale-in stagger-3">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>
+                        Honest communication, transparent pricing, and reliable service. We build lasting relationships based on trust and respect.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our <span class="wmr-accent">Team</span></h2>
+                <p class="section-subtitle">
+                    Skilled professionals passionate about automotive customization
+                </p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member scale-in">
+                    <div class="team-photo">
+                        <span>Team Member Photo</span>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Mike Rodriguez</h3>
+                        <div class="team-role">Lead Installer</div>
+                        <p class="team-bio">
+                            With over 8 years of experience in vehicle wrapping, Mike leads our installation team with precision and attention to detail. Specializes in complex custom graphics and full vehicle transformations.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="team-member scale-in stagger-1">
+                    <div class="team-photo">
+                        <span>Team Member Photo</span>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Sarah Johnson</h3>
+                        <div class="team-role">PPF Specialist</div>
+                        <p class="team-bio">
+                            Sarah brings 6 years of paint protection film expertise to our team. Known for flawless installations and helping clients choose the right protection for their investment.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="team-member scale-in stagger-2">
+                    <div class="team-photo">
+                        <span>Team Member Photo</span>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">David Chen</h3>
+                        <div class="team-role">Design Consultant</div>
+                        <p class="team-bio">
+                            David works closely with clients to bring their vision to life. With a background in graphic design and automotive styling, he creates custom designs that turn heads.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="wmr-accent">Process</span></h2>
+                <p class="section-subtitle">
+                    How we ensure exceptional results every time
+                </p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step scale-in">
+                    <div class="process-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>
+                        We start with a detailed consultation to understand your vision, needs, and budget. Free estimates and design mockups available.
+                    </p>
+                </div>
+                
+                <div class="process-step scale-in stagger-1">
+                    <div class="process-number">2</div>
+                    <h3>Design & Planning</h3>
+                    <p>
+                        Our design team creates custom layouts and provides detailed project planning with timelines and material specifications.
+                    </p>
+                </div>
+                
+                <div class="process-step scale-in stagger-2">
+                    <div class="process-number">3</div>
+                    <h3>Preparation</h3>
+                    <p>
+                        Thorough vehicle cleaning and surface preparation ensure optimal adhesion and long-lasting results.
+                    </p>
+                </div>
+                
+                <div class="process-step scale-in stagger-3">
+                    <div class="process-number">4</div>
+                    <h3>Installation</h3>
+                    <p>
+                        Expert installation using professional techniques and tools in our climate-controlled facility.
+                    </p>
+                </div>
+                
+                <div class="process-step scale-in stagger-4">
+                    <div class="process-number">5</div>
+                    <h3>Quality Assurance</h3>
+                    <p>
+                        Final inspection and quality check before delivery. We ensure every detail meets our standards.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUARANTEES SECTION -->
+    <section class="guarantees-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="wmr-accent">Guarantees</span></h2>
+                <p class="section-subtitle">
+                    Your peace of mind is our priority
+                </p>
+            </div>
+            
+            <div class="guarantees-grid">
+                <div class="guarantee-card scale-in">
+                    <h3>
+                        <i class="fas fa-shield-alt"></i>
+                        Quality Guarantee
+                    </h3>
+                    <p>
+                        We stand behind our work with comprehensive warranties on all installations. If you're not completely satisfied, we'll make it right.
+                    </p>
+                </div>
+                
+                <div class="guarantee-card scale-in stagger-1">
+                    <h3>
+                        <i class="fas fa-certificate"></i>
+                        Premium Materials
+                    </h3>
+                    <p>
+                        We use only the highest quality vinyl wraps, PPF, and tinting materials from trusted industry leaders like 3M and Avery Dennison.
+                    </p>
+                </div>
+                
+                <div class="guarantee-card scale-in stagger-2">
+                    <h3>
+                        <i class="fas fa-clock"></i>
+                        Timely Completion
+                    </h3>
+                    <p>
+                        We respect your time and stick to our promised timelines. Clear communication throughout the project keeps you informed.
+                    </p>
+                </div>
+                
+                <div class="guarantee-card scale-in stagger-3">
+                    <h3>
+                        <i class="fas fa-dollar-sign"></i>
+                        Transparent Pricing
+                    </h3>
+                    <p>
+                        No hidden fees or surprise charges. Our detailed quotes outline all costs upfront so you know exactly what to expect.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ready to Work <span class="wmr-accent">With Us?</span></h2>
+                <p class="section-subtitle">
+                    Experience the Wrap My Ride difference for yourself
+                </p>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--space-2xl);">
+                <a href="contact.html" class="btn btn-primary" style="margin-right: var(--space-md);">Get Your Free Quote</a>
+                <a href="tel:559-905-9135" class="btn btn-secondary">Call (559) 905-9135</a>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--space-lg);">
+                <p style="color: var(--wmr-light-gray);">
+                    <i class="fas fa-map-marker-alt"></i> 
+                    3430 W. Ashlan Ave #109-110, Fresno, CA 93722
+                </p>
+                <p style="color: var(--wmr-light-gray); margin-top: var(--space-sm);">
+                    <i class="fab fa-instagram"></i> 
+                    Follow us on Instagram <a href="https://instagram.com/wrap_my_ride_" target="_blank" style="color: var(--wmr-red);">@wrap_my_ride_</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Wrap My Ride</h3>
+                    <p>
+                        Fresno's premier vehicle wrap specialists. We transform vehicles with professional wraps, 
+                        paint protection film, and window tinting services. Quality installations with premium materials.
+                    </p>
+                    <div class="wmr-red-line"></div>
+                    <p><strong>Vehicle Wraps • PPF • Window Tint</strong></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Why Choose Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html">Meet Our Team</a></li>
+                        <li><a href="about.html">Our Process</a></li>
+                        <li><a href="about.html">Quality Guarantee</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:559-905-9135">(559) 905-9135</a></li>
+                        <li><a href="mailto:info@wrapmyride.com">info@wrapmyride.com</a></li>
+                        <li>3430 W. Ashlan Ave #109-110<br>Fresno, CA 93722</li>
+                        <li><a href="https://instagram.com/wrap_my_ride_" target="_blank">@wrap_my_ride_</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wrap My Ride. All rights reserved. | Professional vehicle wrapping in Fresno, CA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
