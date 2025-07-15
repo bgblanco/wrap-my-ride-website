@@ -35,6 +35,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- GHL Website Tracking -->
+    <script async src="https://track.gohighlevel.com/track.js?website=WRAPMYRIDE_DOMAIN_PLACEHOLDER"></script>
+    
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -379,7 +382,7 @@
                     <a href="tel:559-905-9135" class="mobile-phone">(559) 905-9135</a>
                     <div class="mobile-menu-subtitle">Ready to transform your vehicle?</div>
                 </div>
-                <a href="contact.html" class="mobile-cta">Get Your Free Quote</a>
+                <a href="tel:559-905-9135" class="mobile-cta">Call for Quote</a>
             </div>
         </div>
     </div>
@@ -390,10 +393,10 @@
             <div class="hero-content fade-in">
                 <div class="hero-subtitle">Ready to Transform Your Vehicle?</div>
                 <h1 class="hero-title">
-                    Get Your Free <span class="wmr-accent">Quote</span>
+                    <span class="wmr-accent">Contact</span> Us Today
                 </h1>
                 <p class="hero-description">
-                    Contact Wrap My Ride today for professional vehicle wrapping, paint protection film, and window tinting services in Fresno, CA.
+                    Call (559) 905-9135 for your custom quote on professional vehicle wrapping, paint protection film, and window tinting services in Fresno, CA.
                 </p>
             </div>
         </div>
@@ -403,84 +406,30 @@
     <section class="contact-main">
         <div class="container">
             <div class="contact-grid">
-                <!-- Contact Form -->
+                <!-- Calendar Booking -->
                 <div class="contact-form-section">
-                    <h2 class="form-section-title">Request Your Free Quote</h2>
-                    <form id="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" id="first-name" name="first-name" class="form-input" placeholder="First Name *" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="last-name" name="last-name" class="form-input" placeholder="Last Name *" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Phone Number *" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" class="form-input" placeholder="Email Address *" required>
+                    <h2 class="form-section-title">Schedule Your Consultation</h2>
+                    <div style="margin-bottom: var(--space-lg); text-align: center;">
+                        <p style="color: var(--wmr-light-gray); font-size: var(--font-size-lg); margin-bottom: var(--space-md);">
+                            Book a free consultation to discuss your vehicle transformation project
+                        </p>
+                        <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-md); margin-bottom: var(--space-xl);">
+                            <i class="fas fa-phone" style="color: var(--wmr-red); font-size: var(--font-size-xl);"></i>
+                            <div>
+                                <div style="color: var(--wmr-white); font-weight: 600;">Prefer to Call?</div>
+                                <a href="tel:559-905-9135" style="color: var(--wmr-red); font-size: var(--font-size-lg); text-decoration: none; font-weight: 700;">(559) 905-9135</a>
                             </div>
                         </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" id="vehicle-year" name="vehicle-year" class="form-input" placeholder="Vehicle Year *" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="vehicle-make" name="vehicle-make" class="form-input" placeholder="Vehicle Make *" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group form-group-full">
-                            <input type="text" id="vehicle-model" name="vehicle-model" class="form-input" placeholder="Vehicle Model *" required>
-                        </div>
-                        
-                        <div class="form-group form-group-full">
-                            <label style="color: var(--wmr-white); font-weight: 600; margin-bottom: var(--space-sm); display: block;">
-                                Services Needed (check all that apply):
-                            </label>
-                            <div class="checkbox-group">
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="vehicle-wrap" name="services" value="vehicle-wrap">
-                                    <label for="vehicle-wrap">Vehicle Wrap</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="ppf" name="services" value="ppf">
-                                    <label for="ppf">Paint Protection Film</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="window-tint" name="services" value="window-tint">
-                                    <label for="window-tint">Window Tinting</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="custom-graphics" name="services" value="custom-graphics">
-                                    <label for="custom-graphics">Custom Graphics</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group form-group-full">
-                            <select id="timeline" name="timeline" class="form-select" required>
-                                <option value="">When do you need this completed? *</option>
-                                <option value="asap">ASAP</option>
-                                <option value="1-2-weeks">1-2 weeks</option>
-                                <option value="1-month">Within 1 month</option>
-                                <option value="2-3-months">2-3 months</option>
-                                <option value="flexible">Flexible timeline</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group form-group-full">
-                            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us about your project... (color preferences, specific needs, budget range, etc.)"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            <i class="fas fa-paper-plane"></i> Send Quote Request
-                        </button>
-                    </form>
+                    </div>
+                    
+                    <!-- GHL Calendar Embed -->
+                    <div style="background: var(--wmr-black); padding: var(--space-lg); border-radius: var(--radius-lg); border: 2px solid var(--wmr-red);">
+                        <iframe src="https://links.WRAPMYRIDE_DOMAIN_PLACEHOLDER/widget/booking/CALENDAR_ID_PLACEHOLDER" 
+                        style="width: 100%; min-height: 600px; border: none; overflow: hidden;" 
+                        scrolling="no" 
+                        id="wmr_calendar_booking"></iframe>
+                        <script src="https://links.WRAPMYRIDE_DOMAIN_PLACEHOLDER/js/form_embed.js" type="text/javascript"></script>
+                    </div>
                 </div>
                 
                 <!-- Contact Information -->
@@ -637,7 +586,7 @@
                     <ul class="footer-links">
                         <li><a href="tel:559-905-9135">Call: (559) 905-9135</a></li>
                         <li><a href="contact.html">Request Quote</a></li>
-                        <li><a href="mailto:info@wrapmyride.com">Email Us</a></li>
+                        <li><a href="mailto:wrapmyride559@gmail.com">Email Us</a></li>
                         <li><a href="https://maps.google.com/maps?q=3430+W.+Ashlan+Ave+109-110+Fresno+CA+93722" target="_blank">Get Directions</a></li>
                     </ul>
                 </div>
