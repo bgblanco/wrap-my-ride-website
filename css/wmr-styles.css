@@ -1115,6 +1115,31 @@ p {
 .stagger-4 { transition-delay: 0.4s; }
 .stagger-5 { transition-delay: 0.5s; }
 
+/* === CALENDAR RESPONSIVE DESIGN === */
+.calendar-booking,
+.contact-form-section,
+.footer-section {
+    overflow-x: hidden;
+}
+
+.calendar-booking iframe,
+.contact-form-section iframe,
+.footer-section iframe {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    overflow: hidden;
+    background: transparent;
+}
+
+.calendar-booking .container > div,
+.contact-form-section,
+.footer-section > div {
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
     .hero-title {
@@ -1186,6 +1211,37 @@ p {
         height: 50px;
         max-width: 150px;
     }
+    
+    /* Calendar Mobile Optimization */
+    .calendar-booking iframe,
+    .contact-form-section iframe,
+    .footer-section iframe {
+        min-height: 350px !important;
+        height: 350px !important;
+    }
+    
+    .calendar-booking {
+        padding: var(--space-xl) 0 !important;
+    }
+    
+    .calendar-booking .container > div {
+        padding: var(--space-md) !important;
+        margin: 0 var(--space-sm) !important;
+    }
+}
+
+/* Tablet Calendar Optimization */
+@media (max-width: 768px) and (min-width: 481px) {
+    .calendar-booking iframe,
+    .contact-form-section iframe,
+    .footer-section iframe {
+        min-height: 450px !important;
+        height: 450px !important;
+    }
+    
+    .calendar-booking .container > div {
+        padding: var(--space-lg) !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1195,6 +1251,18 @@ p {
     
     .hero-title {
         font-size: var(--font-size-2xl);
+    }
+    
+    /* Extra small mobile calendar adjustments */
+    .calendar-booking iframe,
+    .contact-form-section iframe,
+    .footer-section iframe {
+        min-height: 320px !important;
+        height: 320px !important;
+    }
+    
+    .calendar-booking .section-header {
+        margin-bottom: var(--space-lg) !important;
     }
     
     .hero-logo-image {
