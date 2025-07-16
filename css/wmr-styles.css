@@ -217,7 +217,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--space-md) 0;
+    padding: var(--space-sm) 0;
 }
 
 .logo {
@@ -558,8 +558,8 @@ p {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding-top: 90px;
-    min-height: calc(100vh - 90px);
+    padding-top: 120px;
+    min-height: calc(100vh - 120px);
     display: flex;
     align-items: center;
     position: relative;
@@ -688,6 +688,15 @@ p {
     background: linear-gradient(135deg, #A0A0A0, var(--wmr-gray));
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
+}
+
+/* === PAGE SECTION UTILITIES === */
+.page-section {
+    padding-top: 120px;
+}
+
+.page-section.with-hero {
+    padding-top: var(--space-3xl);
 }
 
 /* === SERVICES SECTION === */
@@ -1217,6 +1226,15 @@ p {
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+        min-height: calc(100vh - 100px);
+    }
+    
+    .page-section {
+        padding-top: 100px;
+    }
+    
     .hero-title {
         font-size: var(--font-size-3xl);
     }
@@ -1352,6 +1370,12 @@ p {
 @media (max-width: 480px) {
     .hero {
         padding: var(--space-2xl) 0;
+        padding-top: 90px;
+        min-height: calc(100vh - 90px);
+    }
+    
+    .page-section {
+        padding-top: 90px;
     }
     
     .hero-title {
