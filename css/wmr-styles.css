@@ -1130,15 +1130,55 @@ p {
     border: none;
     overflow: hidden;
     background: transparent;
+    height: 100% !important;
+    min-height: 600px;
+    flex: 1;
 }
 
+/* Scrollable Calendar Container */
 .calendar-booking .container > div,
-.contact-form-section,
-.footer-section > div {
-    max-width: 100%;
+.contact-form-section > div:has(iframe),
+.footer-section > div:has(iframe) {
+    height: 70vh;
+    min-height: 500px;
+    overflow-y: auto;
     overflow-x: hidden;
-    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--wmr-red) var(--wmr-dark-gray);
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+    margin: 0 !important;
 }
+
+/* Custom Scrollbar Styling */
+.calendar-booking .container > div::-webkit-scrollbar,
+.contact-form-section > div::-webkit-scrollbar,
+.footer-section > div::-webkit-scrollbar {
+    width: 8px;
+}
+
+.calendar-booking .container > div::-webkit-scrollbar-track,
+.contact-form-section > div::-webkit-scrollbar-track,
+.footer-section > div::-webkit-scrollbar-track {
+    background: var(--wmr-dark-gray);
+    border-radius: 4px;
+}
+
+.calendar-booking .container > div::-webkit-scrollbar-thumb,
+.contact-form-section > div::-webkit-scrollbar-thumb,
+.footer-section > div::-webkit-scrollbar-thumb {
+    background: var(--wmr-red);
+    border-radius: 4px;
+}
+
+.calendar-booking .container > div::-webkit-scrollbar-thumb:hover,
+.contact-form-section > div::-webkit-scrollbar-thumb:hover,
+.footer-section > div::-webkit-scrollbar-thumb:hover {
+    background: #CC0000;
+}
+
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
@@ -1213,34 +1253,25 @@ p {
     }
     
     /* Calendar Mobile Optimization */
-    .calendar-booking iframe,
-    .contact-form-section iframe,
-    .footer-section iframe {
-        min-height: 350px !important;
-        height: 350px !important;
+    .calendar-booking .container > div,
+    .contact-form-section > div:has(iframe),
+    .footer-section > div:has(iframe) {
+        height: 75vh;
+        min-height: 450px;
     }
     
     .calendar-booking {
         padding: var(--space-xl) 0 !important;
     }
-    
-    .calendar-booking .container > div {
-        padding: var(--space-md) !important;
-        margin: 0 var(--space-sm) !important;
-    }
 }
 
 /* Tablet Calendar Optimization */
 @media (max-width: 768px) and (min-width: 481px) {
-    .calendar-booking iframe,
-    .contact-form-section iframe,
-    .footer-section iframe {
-        min-height: 450px !important;
-        height: 450px !important;
-    }
-    
-    .calendar-booking .container > div {
-        padding: var(--space-lg) !important;
+    .calendar-booking .container > div,
+    .contact-form-section > div:has(iframe),
+    .footer-section > div:has(iframe) {
+        height: 80vh;
+        min-height: 500px;
     }
 }
 
@@ -1254,11 +1285,11 @@ p {
     }
     
     /* Extra small mobile calendar adjustments */
-    .calendar-booking iframe,
-    .contact-form-section iframe,
-    .footer-section iframe {
-        min-height: 320px !important;
-        height: 320px !important;
+    .calendar-booking .container > div,
+    .contact-form-section > div:has(iframe),
+    .footer-section > div:has(iframe) {
+        height: 70vh;
+        min-height: 400px;
     }
     
     .calendar-booking .section-header {
