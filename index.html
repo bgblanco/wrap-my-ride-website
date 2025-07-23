@@ -29,19 +29,101 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="theme-color" content="#FF0000">
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://track.gohighlevel.com" crossorigin>
+    <link rel="preconnect" href="https://links.sentinelpeaksolutions.com" crossorigin>
+    
+    <!-- DNS prefetch for external domains -->
+    <link rel="dns-prefetch" href="//instagram.com">
+    <link rel="dns-prefetch" href="//maps.google.com">
+    
+    <!-- Fonts with display swap for better performance -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/wmr-styles.css">
     
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     
     <!-- GHL Website Tracking -->
-    <script async src="https://track.gohighlevel.com/track.js?website=WRAPMYRIDE_DOMAIN_PLACEHOLDER"></script>
+    <script async src="https://track.gohighlevel.com/track.js?website=wrapmyridefresno"></script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://wrapmyride.com/#business",
+        "name": "Wrap My Ride",
+        "image": "https://wrapmyride.com/images/logo/wrap-my-ride-logo.jpg",
+        "description": "Premier vehicle wrap specialists in Fresno, CA. Professional vehicle wraps, paint protection film (PPF), and window tinting services with 200+ color options available.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "3430 W. Ashlan Ave #109-110",
+            "addressLocality": "Fresno",
+            "addressRegion": "CA",
+            "postalCode": "93722",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 36.8077,
+            "longitude": -119.8814
+        },
+        "telephone": "(559) 905-9135",
+        "email": "wrapmyride559@gmail.com",
+        "url": "https://wrapmyride.com",
+        "sameAs": [
+            "https://instagram.com/wrap_my_ride_"
+        ],
+        "openingHours": [
+            "Mo-Fr 08:00-18:00",
+            "Sa 09:00-16:00"
+        ],
+        "priceRange": "$$",
+        "paymentAccepted": ["Cash", "Credit Card"],
+        "areaServed": {
+            "@type": "City",
+            "name": "Fresno, CA"
+        },
+        "serviceType": ["Vehicle Wraps", "Paint Protection Film", "Window Tinting", "Custom Graphics"],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Vehicle Customization Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Vehicle Wraps",
+                        "description": "Complete vehicle transformation with premium vinyl wraps. 200+ color options available."
+                    }
+                },
+                {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Paint Protection Film (PPF)",
+                        "description": "Protect your vehicle's paint from rock chips, scratches, and UV damage with premium PPF installations."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service", 
+                        "name": "Window Tinting",
+                        "description": "Professional window tinting for privacy, UV protection, and heat reduction."
+                    }
+                }
+            ]
+        }
+    }
+    </script>
     
     <style>
         body {
@@ -54,59 +136,63 @@
     </style>
 </head>
 <body>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    
     <!-- NAVIGATION -->
-    <nav class="nav-wrapper" id="navbar">
+    <nav class="nav-wrapper" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="navbar">
-                <a href="index.html" class="logo">
-                    <img src="images/logo/wrap-my-ride-logo.jpg" alt="Wrap My Ride Logo" class="logo-image">
+                <a href="index.html" class="logo" aria-label="Wrap My Ride - Home">
+                    <img src="images/logo/wrap-my-ride-logo.jpg" alt="Wrap My Ride - Vehicle Wraps, PPF, and Window Tinting in Fresno, CA" class="logo-image">
                 </a>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="index.html" class="nav-link active" role="menuitem" aria-current="page">Home</a></li>
+                    <li role="none"><a href="services.html" class="nav-link" role="menuitem">Services</a></li>
+                    <li role="none"><a href="portfolio.html" class="nav-link" role="menuitem">Portfolio</a></li>
+                    <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
                 </ul>
                 
                 <!-- Mobile Hamburger Menu -->
-                <div class="hamburger-menu" id="hamburger-menu">
-                    <div class="hamburger-line"></div>
-                    <div class="hamburger-line"></div>
-                    <div class="hamburger-line"></div>
-                </div>
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-labelledby="mobile-menu-title" aria-hidden="true">
         <div class="mobile-menu-content">
             <div class="mobile-menu-header">
-                <div class="mobile-menu-title">Wrap My Ride</div>
+                <div class="mobile-menu-title" id="mobile-menu-title">Wrap My Ride</div>
                 <div class="mobile-menu-subtitle">Vehicle Wraps • PPF • Window Tint</div>
             </div>
             
-            <nav class="mobile-navigation">
-                <ul class="mobile-nav-links">
-                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-                    <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-                    <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
-                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
-                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            <nav class="mobile-navigation" role="navigation" aria-label="Mobile navigation">
+                <ul class="mobile-nav-links" role="menubar">
+                    <li role="none"><a href="index.html" class="mobile-nav-link" role="menuitem">Home</a></li>
+                    <li role="none"><a href="services.html" class="mobile-nav-link" role="menuitem">Services</a></li>
+                    <li role="none"><a href="portfolio.html" class="mobile-nav-link" role="menuitem">Portfolio</a></li>
+                    <li role="none"><a href="about.html" class="mobile-nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="contact.html" class="mobile-nav-link" role="menuitem">Contact</a></li>
                 </ul>
             </nav>
             
             <div class="mobile-menu-footer">
                 <div class="mobile-contact-info">
-                    <a href="tel:559-905-9135" class="mobile-phone">(559) 905-9135</a>
+                    <a href="tel:559-905-9135" class="mobile-phone" aria-label="Call Wrap My Ride at (559) 905-9135">(559) 905-9135</a>
                     <div class="mobile-menu-subtitle">Ready to transform your vehicle?</div>
                 </div>
-                <a href="tel:559-905-9135" class="mobile-cta">Call for Quote</a>
+                <a href="tel:559-905-9135" class="mobile-cta" aria-label="Call for vehicle wrap quote">Call for Quote</a>
             </div>
         </div>
     </div>
 
+    <main id="main-content">
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
@@ -259,14 +345,14 @@
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 3rem;">
+            <div class="portfolio-cta">
                 <a href="portfolio.html" class="btn btn-primary">View All Projects</a>
             </div>
         </div>
     </section>
 
     <!-- WHY CHOOSE US -->
-    <section class="services" style="background: var(--wmr-dark-gray);">
+    <section class="services why-choose-us">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Why Choose <span class="wmr-accent">Wrap My Ride</span></h2>
@@ -366,10 +452,10 @@
 
                 <div class="contact-cta">
                     <h3>Ready to Transform Your Vehicle?</h3>
-                    <p style="color: var(--wmr-light-gray); margin-bottom: var(--space-xl); font-size: var(--font-size-lg);">
+                    <p class="contact-cta-description">
                         Get your custom quote with a free consultation. Call us or book online using the calendar below.
                     </p>
-                    <div style="display: flex; gap: var(--space-lg); justify-content: center; flex-wrap: wrap;">
+                    <div class="contact-buttons">
                         <a href="tel:559-905-9135" class="btn btn-primary">
                             <i class="fas fa-phone"></i> Call for Quote
                         </a>
@@ -377,8 +463,8 @@
                             <i class="fas fa-calendar"></i> Schedule Consultation
                         </a>
                     </div>
-                    <p style="text-align: center; margin-top: var(--space-lg); color: var(--wmr-light-gray);">
-                        <i class="fas fa-arrow-down" style="color: var(--wmr-red);"></i> 
+                    <p class="calendar-pointer">
+                        <i class="fas fa-arrow-down arrow-accent"></i> 
                         Or book instantly using the calendar below
                     </p>
                 </div>
@@ -387,7 +473,7 @@
     </section>
 
     <!-- CALENDAR BOOKING SECTION -->
-    <section class="calendar-booking" style="background: var(--wmr-dark-gray); padding: var(--space-3xl) 0;">
+    <section class="calendar-booking calendar-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Schedule Your <span class="wmr-accent">Consultation</span></h2>
@@ -396,23 +482,24 @@
                 </p>
             </div>
             
-            <div class="wmr-calendar-wrapper">
+            <div class="wmr-calendar-wrapper calendar-wrapper-spaced">
                 <div class="wmr-calendar-container">
                     <iframe src="https://links.sentinelpeaksolutions.com/widget/booking/iTVxkEUvSsmMZ0BHUfjF" 
                     class="wmr-calendar-iframe"
                     scrolling="no" 
                     title="Schedule Vehicle Wrap Consultation - Wrap My Ride"
-                    id="homepage_calendar_embed"></iframe>
+                    id="homepage_calendar_embed"
+                    loading="lazy"></iframe>
                     <script src="https://links.sentinelpeaksolutions.com/js/form_embed.js" type="text/javascript"></script>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: var(--space-xl);">
-                <p style="color: var(--wmr-light-gray); margin-bottom: var(--space-md); font-size: var(--font-size-lg);">
+            <div class="calendar-cta">
+                <p class="calendar-cta-text">
                     <strong>Prefer to call?</strong> We're here to help!
                 </p>
-                <a href="tel:559-905-9135" class="btn btn-primary" style="font-size: var(--font-size-lg); padding: var(--space-lg) var(--space-2xl);">
-                    <i class="fas fa-phone" style="margin-right: var(--space-sm);"></i> Call (559) 905-9135
+                <a href="tel:559-905-9135" class="btn btn-primary calendar-btn">
+                    <i class="fas fa-phone btn-icon"></i> Call (559) 905-9135
                 </a>
             </div>
         </div>
@@ -460,6 +547,7 @@
             </div>
         </div>
     </footer>
+    </main>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>

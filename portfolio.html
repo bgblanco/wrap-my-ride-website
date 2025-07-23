@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- GHL Website Tracking -->
-    <script async src="https://track.gohighlevel.com/track.js?website=WRAPMYRIDE_DOMAIN_PLACEHOLDER"></script>
+    <script async src="https://track.gohighlevel.com/track.js?website=wrapmyridefresno"></script>
     
     <style>
         body {
@@ -303,6 +303,45 @@
             letter-spacing: 0.1em;
         }
         
+        /* Lazy Video Loading */
+        .portfolio-image {
+            position: relative;
+        }
+        
+        .lazy-video {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lazy-video.loaded {
+            opacity: 1;
+        }
+        
+        .video-fallback {
+            z-index: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-fallback.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .portfolio-image:hover .lazy-video.loaded {
+            opacity: 1;
+        }
+        
+        /* Improved mobile video performance */
+        @media (max-width: 768px) {
+            .lazy-video {
+                object-fit: cover;
+            }
+            
+            .portfolio-image {
+                min-height: 200px;
+            }
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .portfolio-gallery {
@@ -420,10 +459,10 @@
                 <!-- Vehicle Wraps -->
                 <div class="portfolio-item scale-in" data-category="vehicle-wraps">
                     <div class="portfolio-image">
-                        <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
-                            <source src="images/wrap_installation_demo_20.mp4" type="video/mp4">
-                            <img src="images/purple_dodge_front_view_wrapped.jpg" alt="Headlight and Ambient Lighting Installation" style="width: 100%; height: 100%; object-fit: cover;">
+                        <video class="lazy-video" muted loop style="width: 100%; height: 100%; object-fit: cover;" data-src="images/wrap_installation_demo_20.mp4" poster="images/purple_dodge_front_view_wrapped.jpg">
+                            <source data-src="images/wrap_installation_demo_20.mp4" type="video/mp4">
                         </video>
+                        <img src="images/purple_dodge_front_view_wrapped.jpg" alt="Starlight and Ambient Lighting Installation Process" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" class="video-fallback">
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Lighting Installation</div>
@@ -444,10 +483,10 @@
 
                 <div class="portfolio-item scale-in stagger-1" data-category="vehicle-wraps">
                     <div class="portfolio-image">
-                        <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
-                            <source src="images/wrap_installation_process_2.mp4" type="video/mp4">
-                            <img src="images/white_lamborghini_huracan_front_view_shop.jpg" alt="Lamborghini Full Wrap Installation Process" style="width: 100%; height: 100%; object-fit: cover;">
+                        <video class="lazy-video" muted loop style="width: 100%; height: 100%; object-fit: cover;" data-src="images/wrap_installation_process_2.mp4" poster="images/white_lamborghini_huracan_front_view_shop.jpg">
+                            <source data-src="images/wrap_installation_process_2.mp4" type="video/mp4">
                         </video>
+                        <img src="images/white_lamborghini_huracan_front_view_shop.jpg" alt="Lamborghini Huracan Full Wrap Installation Process" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" class="video-fallback">
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Full Wrap Process</div>
@@ -468,10 +507,10 @@
 
                 <div class="portfolio-item scale-in stagger-2" data-category="ppf">
                     <div class="portfolio-image">
-                        <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
-                            <source src="images/wrap_process_close_up_16.mp4" type="video/mp4">
-                            <img src="images/gray_range_rover_front_view_shop.jpg" alt="Mercedes Full Wrap Process Close-up" style="width: 100%; height: 100%; object-fit: cover;">
+                        <video class="lazy-video" muted loop style="width: 100%; height: 100%; object-fit: cover;" data-src="images/wrap_process_close_up_16.mp4" poster="images/gray_range_rover_front_view_shop.jpg">
+                            <source data-src="images/wrap_process_close_up_16.mp4" type="video/mp4">
                         </video>
+                        <img src="images/gray_range_rover_front_view_shop.jpg" alt="Mercedes Full Wrap Process Close-up Detail" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" class="video-fallback">
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Full Wrap Process</div>
@@ -513,10 +552,10 @@
 
                 <div class="portfolio-item scale-in stagger-4" data-category="vehicle-wraps">
                     <div class="portfolio-image">
-                        <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
-                            <source src="images/wrap_process_demo_6.mp4" type="video/mp4">
-                            <img src="images/wrap_nissan_gtr_nismo_green_olive_side_angle.jpg" alt="GTR Wrap Process Demo" style="width: 100%; height: 100%; object-fit: cover;">
+                        <video class="lazy-video" muted loop style="width: 100%; height: 100%; object-fit: cover;" data-src="images/wrap_process_demo_6.mp4" poster="images/wrap_nissan_gtr_nismo_green_olive_side_angle.jpg">
+                            <source data-src="images/wrap_process_demo_6.mp4" type="video/mp4">
                         </video>
+                        <img src="images/wrap_nissan_gtr_nismo_green_olive_side_angle.jpg" alt="Nissan GTR Nismo Wrap Process Demonstration" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" class="video-fallback">
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Process Demo</div>
@@ -537,10 +576,10 @@
 
                 <div class="portfolio-item scale-in stagger-5" data-category="custom-graphics">
                     <div class="portfolio-image">
-                        <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
-                            <source src="images/wrap_installation_detail_8.mp4" type="video/mp4">
-                            <img src="images/gray_range_rover_side_profile_wrapped.jpg" alt="Range Rover Wrap Installation Detail" style="width: 100%; height: 100%; object-fit: cover;">
+                        <video class="lazy-video" muted loop style="width: 100%; height: 100%; object-fit: cover;" data-src="images/wrap_installation_detail_8.mp4" poster="images/gray_range_rover_side_profile_wrapped.jpg">
+                            <source data-src="images/wrap_installation_detail_8.mp4" type="video/mp4">
                         </video>
+                        <img src="images/gray_range_rover_side_profile_wrapped.jpg" alt="Range Rover Full Wrap and Chrome Delete Installation" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" class="video-fallback">
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Full Wrap & Chrome Delete</div>
@@ -561,10 +600,10 @@
 
                 <div class="portfolio-item scale-in stagger-6" data-category="vehicle-wraps">
                     <div class="portfolio-image">
-                        <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
-                            <source src="images/vehicle_transformation_5.mp4" type="video/mp4">
-                            <img src="images/purple_dodge_rear_view_wrapped.jpg" alt="Vehicle Transformation Process" style="width: 100%; height: 100%; object-fit: cover;">
+                        <video class="lazy-video" muted loop style="width: 100%; height: 100%; object-fit: cover;" data-src="images/vehicle_transformation_5.mp4" poster="images/purple_dodge_rear_view_wrapped.jpg">
+                            <source data-src="images/vehicle_transformation_5.mp4" type="video/mp4">
                         </video>
+                        <img src="images/purple_dodge_rear_view_wrapped.jpg" alt="Starlight Ceiling Installation and Vehicle Transformation" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" class="video-fallback">
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Starlight Installation</div>

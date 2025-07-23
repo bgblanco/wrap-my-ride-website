@@ -63,6 +63,43 @@ html {
     font-size: 16px;
 }
 
+/* === ACCESSIBILITY === */
+.skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--wmr-red);
+    color: var(--wmr-white);
+    padding: 8px;
+    z-index: 10000;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: top 0.3s ease;
+}
+
+.skip-nav:focus {
+    top: 6px;
+}
+
+/* Focus styles for better accessibility */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid var(--wmr-red);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --wmr-light-gray: #E0E0E0;
+        --wmr-dark-gray: #1A1A1A;
+    }
+}
+
 body {
     font-family: 'Arial', 'Helvetica', sans-serif;
     background-color: var(--wmr-black);
@@ -299,6 +336,12 @@ p {
     transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     position: relative;
     overflow: hidden;
+    font-size: 0; /* Hide any text content */
+}
+
+.hamburger-menu:focus {
+    outline: 2px solid var(--wmr-red);
+    outline-offset: 2px;
 }
 
 .hamburger-menu::before {
@@ -1132,6 +1175,7 @@ p {
     overflow: hidden;
     position: relative;
     transition: all var(--transition-medium);
+    max-width: 100%;
 }
 
 .wmr-calendar-container:hover {
@@ -1156,6 +1200,8 @@ p {
     background: transparent;
     display: block;
     min-height: 600px;
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 /* Calendar Section Styling */
@@ -1190,6 +1236,77 @@ p {
     box-shadow: 0 15px 40px rgba(255, 0, 0, 0.2);
 }
 
+/* Calendar CTA Styling */
+.calendar-cta {
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+.calendar-cta .btn {
+    margin-top: var(--space-sm);
+}
+
+.calendar-cta-text {
+    color: var(--wmr-light-gray);
+    margin-bottom: var(--space-lg);
+    font-size: var(--font-size-lg);
+}
+
+.calendar-btn {
+    font-size: var(--font-size-lg);
+    padding: var(--space-lg) var(--space-2xl);
+}
+
+.btn-icon {
+    margin-right: var(--space-sm);
+}
+
+/* Contact Section Styles */
+.contact-cta-description {
+    color: var(--wmr-light-gray);
+    margin-bottom: var(--space-xl);
+    font-size: var(--font-size-lg);
+}
+
+.contact-buttons {
+    display: flex;
+    gap: var(--space-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.calendar-pointer {
+    text-align: center;
+    margin-top: var(--space-lg);
+    color: var(--wmr-light-gray);
+}
+
+.arrow-accent {
+    color: var(--wmr-red);
+}
+
+/* Portfolio CTA */
+.portfolio-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    background: var(--wmr-dark-gray);
+}
+
+/* Calendar Section */
+.calendar-section {
+    background: var(--wmr-dark-gray);
+    padding: var(--space-3xl) 0;
+}
+
+.calendar-wrapper-spaced {
+    margin-top: var(--space-2xl);
+}
+
 /* Footer Calendar Styling */
 .footer-calendar-container {
     background: var(--wmr-dark-gray);
@@ -1213,7 +1330,10 @@ p {
     border-radius: var(--radius-lg);
     overflow: hidden;
     padding: var(--space-md);
-    min-width: 500px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .contact-calendar-container iframe {
@@ -1221,6 +1341,47 @@ p {
     min-height: 650px;
     border: none;
     background: transparent;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Calendar Loading States */
+.calendar-loading {
+    position: relative;
+    min-height: 400px;
+    background: var(--wmr-dark-gray);
+}
+
+.calendar-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    border-radius: var(--radius-lg);
+}
+
+.calendar-loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--wmr-red);
+    font-size: var(--font-size-lg);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+/* Improved calendar container positioning */
+.wmr-calendar-wrapper, 
+.contact-calendar-container, 
+.footer-calendar-container {
+    position: relative;
 }
 
 
@@ -1305,30 +1466,65 @@ p {
         max-width: 150px;
     }
     
+    /* Mobile Spacing Improvements */
+    .calendar-booking {
+        padding: var(--space-2xl) 0 !important;
+    }
+    
+    .section-header {
+        margin-bottom: var(--space-xl);
+        padding: 0 var(--space-md);
+    }
+    
+    .calendar-cta {
+        padding: var(--space-md);
+    }
+    
+    .calendar-cta .btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+    }
+    
     /* Calendar Mobile Optimization */
     .wmr-calendar-iframe {
         min-height: 500px;
+        overflow-x: hidden;
     }
     
     .wmr-calendar-wrapper {
         padding: var(--space-md);
+        margin: 0 auto;
+        max-width: 100%;
+        overflow-x: hidden;
     }
     
     .contact-calendar-container {
         padding: var(--space-sm);
-        min-width: auto;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
     
     .contact-calendar-container iframe {
         min-height: 650px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
     
     .footer-calendar-container {
         max-height: 280px;
+        width: 100%;
+        overflow-x: hidden;
     }
     
     .footer-calendar-container iframe {
         height: 260px;
+        width: 100%;
+        overflow-x: hidden;
     }
 }
 
@@ -1385,27 +1581,40 @@ p {
     /* Extra small mobile calendar adjustments */
     .wmr-calendar-iframe {
         min-height: 450px;
+        overflow-x: hidden;
     }
     
     .wmr-calendar-wrapper {
         padding: var(--space-sm);
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .contact-calendar-container {
         padding: var(--space-xs);
-        min-width: auto;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
     
     .contact-calendar-container iframe {
         min-height: 600px;
+        width: 100%;
+        overflow-x: hidden;
     }
     
     .footer-calendar-container {
         max-height: 250px;
+        width: 100%;
+        overflow-x: hidden;
     }
     
     .footer-calendar-container iframe {
         height: 230px;
+        width: 100%;
+        overflow-x: hidden;
     }
     
     .calendar-booking .section-header {

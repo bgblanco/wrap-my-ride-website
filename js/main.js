@@ -145,36 +145,68 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Mobile menu functionality
+// Mobile menu functionality with accessibility improvements
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger-menu');
     const mobileMenu = document.querySelector('.mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
     
     if (hamburger && mobileMenu) {
+        // Toggle mobile menu
         hamburger.addEventListener('click', function() {
+            const isOpen = hamburger.classList.contains('active');
+            
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+            
+            // Update ARIA attributes
+            hamburger.setAttribute('aria-expanded', !isOpen);
+            mobileMenu.setAttribute('aria-hidden', isOpen);
+            
+            // Manage body scroll and focus
+            if (!isOpen) {
+                document.body.style.overflow = 'hidden';
+                // Focus first menu item when opened
+                const firstLink = mobileMenu.querySelector('.mobile-nav-link');
+                if (firstLink) {
+                    firstLink.focus();
+                }
+            } else {
+                document.body.style.overflow = 'auto';
+                hamburger.focus(); // Return focus to hamburger button
+            }
         });
         
         // Close mobile menu when clicking links
         mobileLinks.forEach(link => {
             link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                closeMobileMenu();
             });
         });
         
         // Close mobile menu when clicking outside
         mobileMenu.addEventListener('click', function(e) {
             if (e.target === mobileMenu) {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                closeMobileMenu();
             }
         });
+        
+        // Close menu with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Helper function to close mobile menu
+        function closeMobileMenu() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = 'auto';
+            hamburger.focus();
+        }
     }
 }
 
@@ -286,9 +318,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Lazy loading for images
+// Lazy loading for images and videos
 function initLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
+    const videos = document.querySelectorAll('video.lazy-video');
     
     const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -301,7 +334,103 @@ function initLazyLoading() {
         });
     });
     
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const video = entry.target;
+                const source = video.querySelector('source[data-src]');
+                const fallbackImg = video.parentElement.querySelector('.video-fallback');
+                
+                if (source && source.getAttribute('data-src')) {
+                    source.src = source.getAttribute('data-src');
+                    source.removeAttribute('data-src');
+                    video.load();
+                    
+                    video.addEventListener('loadeddata', () => {
+                        video.classList.add('loaded');
+                        if (fallbackImg) {
+                            fallbackImg.classList.add('hide');
+                        }
+                        // Start playing the video on mobile when tapped or on desktop when hovered
+                        if (window.innerWidth > 768) {
+                            video.addEventListener('mouseenter', () => video.play());
+                            video.addEventListener('mouseleave', () => video.pause());
+                        } else {
+                            video.addEventListener('touchstart', () => {
+                                if (video.paused) {
+                                    video.play();
+                                } else {
+                                    video.pause();
+                                }
+                            });
+                        }
+                    });
+                    
+                    videoObserver.unobserve(video);
+                }
+            }
+        });
+    }, {
+        rootMargin: '50px 0px',
+        threshold: 0.1
+    });
+    
     images.forEach(img => imageObserver.observe(img));
+    videos.forEach(video => videoObserver.observe(video));
+}
+
+// Calendar optimization for mobile
+function initCalendarOptimization() {
+    const calendarIframes = document.querySelectorAll('iframe[src*="sentinelpeaksolutions.com"]');
+    
+    calendarIframes.forEach(iframe => {
+        // Add loading state
+        const container = iframe.parentElement;
+        if (container) {
+            container.classList.add('calendar-loading');
+            
+            // Add loading indicator
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'calendar-loading-indicator';
+            loadingDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading calendar...';
+            loadingDiv.style.cssText = `
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: var(--wmr-red);
+                font-size: var(--font-size-lg);
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                gap: var(--space-sm);
+            `;
+            container.appendChild(loadingDiv);
+        }
+        
+        // Remove loading state when iframe loads
+        iframe.addEventListener('load', function() {
+            if (container) {
+                container.classList.remove('calendar-loading');
+                const loadingIndicator = container.querySelector('.calendar-loading-indicator');
+                if (loadingIndicator) {
+                    loadingIndicator.remove();
+                }
+            }
+        });
+        
+        // Mobile optimization - adjust iframe height on resize
+        const optimizeForMobile = () => {
+            if (window.innerWidth <= 768) {
+                iframe.style.height = '500px';
+            } else if (window.innerWidth <= 480) {
+                iframe.style.height = '450px';
+            }
+        };
+        
+        window.addEventListener('resize', debounce(optimizeForMobile, 250));
+        optimizeForMobile(); // Initial call
+    });
 }
 
 // Initialize all functionality
@@ -310,6 +439,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initImageGallery();
     initPortfolioFilter();
     initLazyLoading();
+    initCalendarOptimization();
 });
 
 // Debounce function for performance
