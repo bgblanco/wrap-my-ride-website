@@ -184,23 +184,6 @@ p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Hero Logo Styling */
-.hero-logo {
-    text-align: center;
-    margin-bottom: var(--space-xl);
-}
-
-.hero-logo-image {
-    max-width: 400px;
-    height: auto;
-    filter: drop-shadow(0 8px 16px rgba(255, 0, 0, 0.4));
-    transition: all var(--transition-medium);
-}
-
-.hero-logo-image:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 12px 24px rgba(255, 0, 0, 0.6));
-}
 
 /* Hero Services Tagline */
 .hero-services-tagline {
@@ -652,7 +635,7 @@ p {
     font-size: var(--font-size-xl);
     color: var(--wmr-red);
     font-weight: 600;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
     text-transform: uppercase;
     letter-spacing: 0.2em;
 }
@@ -1404,9 +1387,6 @@ p {
         font-size: var(--font-size-lg);
     }
     
-    .hero-logo-image {
-        max-width: 280px;
-    }
     
     .hero-services-tagline {
         font-size: var(--font-size-base);
@@ -1426,11 +1406,6 @@ p {
         right: -40px;
     }
     
-    /* Additional mobile logo spacing */
-    .hero-logo {
-        margin-top: var(--space-lg);
-        margin-bottom: var(--space-lg);
-    }
     
     .services-grid {
         grid-template-columns: 1fr;
@@ -1462,8 +1437,8 @@ p {
     }
     
     .logo-image {
-        height: 50px;
-        max-width: 150px;
+        height: 70px;
+        max-width: 200px;
     }
     
     /* Mobile Spacing Improvements */
@@ -1621,9 +1596,6 @@ p {
         margin-bottom: var(--space-lg) !important;
     }
     
-    .hero-logo-image {
-        max-width: 250px;
-    }
     
     .hero-services-tagline {
         font-size: var(--font-size-sm);
@@ -1648,7 +1620,7 @@ p {
     }
     
     .logo-image {
-        height: 45px;
-        max-width: 120px;
+        height: 65px;
+        max-width: 180px;
     }
 }
